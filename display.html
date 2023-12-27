@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Diary</title>
+    <link rel="stylesheet" href="display.css">
 </head>
 <body>
+    <header>
+        <h1>My Daisy</h1>
+    </header>
+    <main>
+        <div class="image-grid">
+            <div class="month-calender">
+                <ul>
+                    <img src="image/1.jpg" alt="image1"class="grid-image1">
+                    <img src="image/2.jpg" alt="image2"class="grid-image2">
+                    <img src="image/3.jpg" alt="image3"class="grid-image3">
+                    <img src="image/4.jpg" alt="image4"class="grid-image4">
+                    <img src="image/5.jpg" alt="image5"class="grid-image5">
+                    <img src="image/6.jpg" alt="image6"class="grid-image6">
+                    <img src="image/7.jpg" alt="image7"class="grid-image7">
+                    <img src="image/8.jpg" alt="image8"class="grid-image8">
+                    <img src="image/9.jpg" alt="image9"class="grid-image9">
+                    <img src="image/10.jpg" alt="image10"class="grid-image10">
+                    <img src="image/11.jpg" alt="image11"class="grid-image11">
+                    <img src="image/12.jpg" alt="image12"class="grid-image12">
+                </ul>
+            </div>
+        </div>
+        <button class="button" id="scrollToTopBtn" data-scroll data-speed="800" data-easing="easeInOutCubic">Enter</button>
+    </main>
+    <video autoplay loop plays-inline class="back-video" id="audioPlayer" controls>
+        <source src="display.mp4" type="video/mp4">
+    </video>
     
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        // เมื่อผู้ใช้ออกจากหน้าเว็บ
+        window.addEventListener('beforeunload', function(event) {
+            // บันทึกตำแหน่งที่หยุดเพลงลง Session Storage
+            sessionStorage.setItem('audioCurrentTime', audioPlayer.currentTime);
+        });
+
+        // โหลดหน้าใหม่
+        window.addEventListener('load', function() {
+            // ถ้ามีเพลงที่เคยเล่น
+            const audioCurrentTime = sessionStorage.getItem('audioCurrentTime');
+            if (audioCurrentTime) {
+                // กำหนดตำแหน่งที่หยุดไว้และเล่น
+                audioPlayer.currentTime = parseFloat(audioCurrentTime);
+            }
+        });
+        
+    </script>
+    <script src="display.js"></script>
 </body>
 </html>
