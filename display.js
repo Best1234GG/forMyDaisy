@@ -1,5 +1,26 @@
-//<button class="button" id="scrollToTopBtn" data-scroll data-speed="800" data-easing="easeInOutCubic">Enter</button>
-var button = document.getElementById('scrollToTopBtn);
-if (button) {
-  windows.location = "love.html";                                     
+function onclickme() {
+  window.location.href = 'love.html';
 }
+        document.addEventListener("DOMContentLoaded", function() {
+        var duration = 15000;
+
+        var scrollPerMillisecond = window.innerHeight / duration;
+
+        function scrollStep(timestamp) {
+          if (!start) start = timestamp;
+          var elapsed = timestamp - start;
+
+          var newPosition = Math.min(scrollPerMillisecond * elapsed, document.body.scrollHeight - window.innerHeight);
+      
+
+          window.scrollTo(0, newPosition);
+      
+          if (newPosition < document.body.scrollHeight - window.innerHeight) {
+              requestAnimationFrame(scrollStep);
+          }
+      }
+      
+
+        var start;
+        requestAnimationFrame(scrollStep);
+    });
