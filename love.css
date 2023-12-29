@@ -14,7 +14,7 @@ h1{
     display: none;
     text-align: center;
     margin: 50px auto;
-    transform: translate(325px);
+    transform: translate(650px);
     color: white;
     font-size: large;
     width: 475px;
@@ -27,7 +27,7 @@ h1{
     position: relative;
     text-align: center;
     background-color: violet;
-    transform: translate(270px,50px);
+    transform: translate(905px,50px);
     width: 125px;
     height: 50px;
     border-radius: 20px;
@@ -53,4 +53,7 @@ h1{
     position: absolute;
     left: 10px;
     bottom: -10px;
+}
+.back-video{
+    display: none;
 }
