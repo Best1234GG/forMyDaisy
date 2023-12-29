@@ -11,36 +11,16 @@
         <h1 id="text">Countdown to New Year</h1>
         <div id="countdown"></div>
     </div>
-    <video autoplay loop plays-inline class="back-video" id="audioPlayer">
-        <source src="music.mp4" type="video/mp4">
+
+    <video id="video" style="display: none;" controls>
+        <source src="countdown.mp4" type="video/mp4">
     </video>
-    
-
-
     <button class="button" id="button" onclick="openFile('fire.html')">Enter</button>
 
     <script>
         function openFile(file){
             window.location.href = file;
         }
-        const audioPlayer = document.getElementById('audioPlayer');
-
-        // เมื่อผู้ใช้ออกจากหน้าเว็บ
-        window.addEventListener('beforeunload', function(event) {
-            // บันทึกตำแหน่งที่หยุดเพลงลง Session Storage
-            sessionStorage.setItem('audioCurrentTime', audioPlayer.currentTime);
-        });
-
-        // โหลดหน้าใหม่
-        window.addEventListener('load', function() {
-            // ถ้ามีเพลงที่เคยเล่น
-            const audioCurrentTime = sessionStorage.getItem('audioCurrentTime');
-            if (audioCurrentTime) {
-                // กำหนดตำแหน่งที่หยุดไว้และเล่น
-                audioPlayer.currentTime = parseFloat(audioCurrentTime);
-            }
-        });
-        
     </script>
     <script src="script.js"></script>
 </body>
