@@ -51,10 +51,13 @@ body {
 
 h1 {
     color: #fff;
+    margin-left: 0px;
 }
 
 #countdown {
     font-size: 2em;
     margin-top: 20px;
     color: #ff4500;
+    margin-left: 0px;
 }
+
