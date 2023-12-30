@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>New Year Countdown</title>
+</head>
+<body>
+    <div class="countdown-container">
+        <h1 id="text">Countdown to New Year</h1>
+        <div id="countdown"></div>
+    </div>
+
+    <video id="video" style="display: none;" controls>
+        <source src="countdown.mp4" type="video/mp4">
+    </video>
+    <button class="button" id="button" onclick="openFile('fire/fire.html')">Enter</button>
+
+    <script>
+        function openFile(file){
+            window.location.href = file;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

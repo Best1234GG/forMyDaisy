@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text love</title>
+    <link rel="stylesheet" href="love.css">
+</head>
+<body>
+    <div class="Contrianer">
+        <div class="text-title">
+            <h1>HAPPY NEW YEARS</h1>
+            <h1>MY DAISY</h1>
+        </div>
+        <br>
+        <div class="love"></div>
+        <div class="text" id="text">
+            <p>
+                สวัสดีคั๊บกานต์ๆ ปีใหม่แล้วนะขอให้แฟนมีสุขภาพร่างกายแข็งแรง 
+                แล้วก็อยากให้แฟนมีความสุขเยอะๆ <br>ยิ้มเยอะๆจะได้น่ารัก 
+                เค้ารักกานต์นะ <br>อยู่กับเค้าไปนานๆเลยนะ เค้าอยากอยู่กับเธอตลอดไปเลย</p> 
+            
+        </div>
+    </div>
+    <video autoplay loop plays-inline class="back-video" id="audioPlayer">
+        <source src="lovesence.mp4" type="video/mp4">
+    </video>
+    
+    <button id="button" class="button"onclick="clickbutton()">
+        Enter
+    </button>
+    <script>
+        function openFile(file){
+            window.location.href = file;
+        }
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        window.addEventListener('beforeunload', function(event) {
+            sessionStorage.setItem('audioCurrentTime', audioPlayer.currentTime);
+        });
+
+        window.addEventListener('load', function() {
+            const audioCurrentTime = sessionStorage.getItem('audioCurrentTime');
+            if (audioCurrentTime) {
+                audioPlayer.currentTime = parseFloat(audioCurrentTime);
+            }
+        });
+        
+    </script>
+    <script src="love.js"></script>
+</body>
+</html>
