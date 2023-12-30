@@ -1,22 +1,19 @@
-function onclickme() {
-  window.location.href = 'love/love.html';
-}
-        document.addEventListener("DOMContentLoaded", function() {
-        var duration = 15000;
+document.addEventListener("DOMContentLoaded", function() {
+  var duration = 15000;
 
-        var scrollPerMillisecond = window.innerHeight / duration;
+  var scrollPerMillisecond = window.innerHeight / duration;
 
-        function scrollStep(timestamp) {
-          if (!start) start = timestamp;
-          var elapsed = timestamp - start;
+    function scrollStep(timestamp) {
+      if (!start) start = timestamp;
+        var elapsed = timestamp - start;
 
-          var newPosition = Math.min(scrollPerMillisecond * elapsed, document.body.scrollHeight - window.innerHeight);
+        var newPosition = Math.min(scrollPerMillisecond * elapsed, document.body.scrollHeight - window.innerHeight);
       
 
-          window.scrollTo(0, newPosition);
+        window.scrollTo(0, newPosition);
       
-          if (newPosition < document.body.scrollHeight - window.innerHeight) {
-              requestAnimationFrame(scrollStep);
+        if (newPosition < document.body.scrollHeight - window.innerHeight) {
+          requestAnimationFrame(scrollStep);
           }
       }
       
