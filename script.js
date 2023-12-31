@@ -13,14 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
         const button = document.getElementById("button");
         const text = document.getElementById("text");
-        if (days == 0 && hours == 0 && minutes == 0 && seconds == 0){
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`; 
-            button.style.display = "inline-block";
-            text.style.marginLeft = "250px";
-            countdown.style.marginLeft = "250px";
-
-        }else{
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
         if (days == 0 && hours == 0 && minutes == 0 && seconds <= 10){
             video.play();
