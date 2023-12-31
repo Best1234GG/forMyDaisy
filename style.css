@@ -10,7 +10,7 @@ body {
     animation: gradientAnimation 10s ease infinite;
 }
 .button {
-    display: none;
+    display: inline-block;
     padding: 15px 25px;
     font-size: 24px;
     cursor: pointer;
